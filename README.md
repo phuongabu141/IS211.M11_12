@@ -10,8 +10,8 @@
   * CN. Nguyễn Minh Nhựt
 
 # Thông tin nhóm
-| STT | Center Aligned  | Right Aligned | Right Aligned     |
-| :---|:---------------:|:---------------:|:---------------:|
-| 1   | some wordy text | $1600           |                 |
+| STT | Họ và tên             | MSSV     | Github                              | 
+|:---:|:---------------------:|:--------:|:-----------------------------------:|
+| 1   | Nguyễn Thị Mai Phương | 19522064 | https://github.com/phuongabu141     |                 
 | 2   | centered        |   $12           |                 |
 | 3   | are neat        |    $1           |                 |
