@@ -13,5 +13,6 @@
 | STT | Họ và tên             | MSSV     | Github                              | 
 |:---:|:---------------------:|:--------:|:-----------------------------------:|
 | 1   | Nguyễn Thị Mai Phương | 19522064 | https://github.com/phuongabu141     |                 
-| 2   | centered        |   $12           |                 |
-| 3   | are neat        |    $1           |                 |
+| 2   | Võ Minh Trí           | 19522396 |                                     |
+| 3   | Vũ Hữu Tùng           | 19522497 |                                     |
+| 4   | Nguyễn Văn Hữu Nghĩa  | 19521900 |                                     |
