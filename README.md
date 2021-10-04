@@ -10,8 +10,8 @@
   * CN. Nguyễn Minh Nhựt
 
 # Thông tin nhóm
-| Left-Aligned  | Center Aligned  | Right Aligned | Right Aligned     |
-| :-------------|:---------------:|:---------------:|:---------------:|
-| col 3 is      | some wordy text | $1600           |                 |
-| col 2 is      | centered        |   $12           |                 |
-| zebra stripes | are neat        |    $1           |                 |
+| STT | Center Aligned  | Right Aligned | Right Aligned     |
+| :---|:---------------:|:---------------:|:---------------:|
+| 1   | some wordy text | $1600           |                 |
+| 2   | centered        |   $12           |                 |
+| 3   | are neat        |    $1           |                 |
