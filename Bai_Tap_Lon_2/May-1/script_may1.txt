@@ -1,0 +1,134 @@
+--- Tao keyspace ---
+Create user chinhanh1 with password ‘chinhanh1’; 
+--- Tao cac bang ---
+CREATE TABLE cn1.CHINHANH
+(
+    	MACN VARCHAR,
+    	TENCN VARCHAR,
+    	THANHPHO VARCHAR,
+	primary key (MACN)
+);
+
+CREATE TABLE cn1.KHACHHANG
+(
+    	MAKH VARCHAR,
+    	TENKH VARCHAR,
+    	NGAYSINH DATE,
+    	SDT VARCHAR,
+    	MACN VARCHAR,
+	primary key (MAKH)
+);
+
+CREATE TABLE cn1.LOAITAIKHOAN
+(
+	MALTK VARCHAR,
+	TENLTK VARCHAR,
+	MOTA VARCHAR,
+	primary key (MALTK)
+);
+
+CREATE TABLE cn1.TAIKHOAN_QL
+(
+	SOTK VARCHAR,
+	MALTK VARCHAR,
+	NGAYMO DATE,
+	NGAYDONG DATE,
+	MACN VARCHAR,
+   	MAKH VARCHAR,
+	primary key (SOTK)
+);
+
+CREATE TABLE cn1.TAIKHOAN_KH
+(
+	SOTK VARCHAR,
+	MALTK VARCHAR,
+	LAISUAT float,
+	TRANGTHAI VARCHAR,
+	MACN VARCHAR,
+      MAKH VARCHAR,
+      SoTien int,
+      MatKhau Varchar,
+	primary key (SOTK)
+);
+ 
+Create table cn1.GiaoDich
+(
+    MACN VARCHAR,
+    MAKH VARCHAR,
+    TienGD int,
+    NgayGiaoDich Date,
+    LoaiGiaoDich Varchar,
+    primary key (MACN,MAKH,NgayGiaoDich)
+);
+
+--- Them du lieu ---
+
+--- Bang Chi Nhanh ---
+insert into cn1.ChiNhanh(MACN, TENCN, THANHPHO) values('CN01','CN Ho Chi Minh','HCM');
+insert into cn1.ChiNhanh(MACN, TENCN, THANHPHO) values ('CN02','CN Hue', 'HUE');
+
+--- Bang Khachhang ---
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH01','Nguyen Thi Mai Phuong','2001-04-01','387143373','CN01');	
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH02','Vo Minh Tri','2001-06-25','989234346','CN01');
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH04','Nguyen Van Huu Nghia','2001-08-27','258193786','CN01');	
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH07','Nguyen Minh Hieu','2001-07-17','689543268','CN01');
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH10','Tran Van Anh','1998-07-23','387143986','CN01');
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH11','Tran Quang Linh','2000-09-08','689723156','CN01');	
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH13','Tran Van Loc','1987-05-28','989683114','CN01');
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH14','Truong Nguyen Ngoc','1991-09-06','967865148','CN01');	
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH17','Pham Van Anh','1975-10-15','334502448','CN01');
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH18','Nguyen Cong Hung','1974-12-12','334568789','CN01');	
+insert into cn1.KhachHang(MAKH, TENKH, NGAYSINH, SDT, MACN) values('KH20','Tran Huyen Nhu','1993-04-08','687235689','CN01');
+
+--- Bang TaiKhoan ---
+insert into cn1.loaitaikhoan(MALTK, TENLTK, MOTA) values('LTK01','Tiet Kiem','Tien gui tiet kiem');
+insert into cn1.loaitaikhoan(MALTK, TENLTK, MOTA) values('LTK02','Vay','Vay von ngan hang');
+insert into cn1.loaitaikhoan(MALTK, TENLTK, MOTA) values('LTK03','Thanh Toan','The ATM');
+insert into cn1.loaitaikhoan(MALTK, TENLTK, MOTA) values('LTK04','The Tin Dung','Tra truoc, tra sau');
+
+--- Bang Taikhoan_ql ---
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898966668','LTK01','2021-01-01',	'2021-07-01','CN01','KH01');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898543689','LTK02','2020-10-09',	'2021-10-09','CN01','KH02');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898634572','LTK04','2021-08-20',	'2026-08-20','CN01','KH04');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898239856','LTK02','2019-02-06',	'2020-02-06','CN01','KH07');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898231123','LTK03','2021-12-01',	'2026-12-01','CN01','KH10');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898469873','LTK01','2019-09-03',	'2020-09-03','CN01','KH11');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898753210','LTK02','2021-11-20',	'2022-12-20','CN01','KH13');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898637142','LTK02','2021-03-02',	'2022-03-02','CN01','KH14');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898723846','LTK02','2019-03-01',	'2020-03-01','CN01','KH17');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898068793','LTK01','2021-07-17',	'2022-07-17','CN01','KH18');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898764539','LTK03','2018-08-06',	'2023-08-06','CN01','KH20');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('896004231','LTK02','2021-11-21',	'2022-11-22','CN01','KH20');
+insert into cn1.TAIKHOAN_QL(SOTK, MALTK, NGAYMO , NGAYDONG , MACN , MAKH) values('898564223','LTK01','2021-04-26',	'2022-04-26','CN01','KH14');
+
+--- Bang Taikhoan_kh ---
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898966668','LTK01',4,'Hoat dong','CN01','KH01',100000000,'000000');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898543689','LTK02',8,'Khoa','CN01','KH02',1000000000,'000001');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898634572','LTK04',2.16,'Hoat dong','CN01','KH04',50000000,'000101');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898239856','LTK02',7.5,'Khoa','CN01','KH07',150000000,'000110');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898231123','LTK03',0,'Chua kich hoat','CN01','KH10',0,'000111');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898469873','LTK01',4.5,'Khoa','CN01','KH11',80000000,'001001');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898753210','LTK02',8,'Chua kich hoat','CN01','KH13',260000000,'001111');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898637142','LTK02',8,'Hoat dong','CN01','KH14',260000000,'010001');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898723846','LTK02',8,'Khoa','CN01','KH17',150000000,'010011');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898068793','LTK01',4,'Hoat dong','CN01','KH18',600000000,'010100');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898764539','LTK03',0,'Khoa','CN01','KH20',50000,'010101');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('896004231','LTK02',8,'Chua kich hoat','CN01','KH20',100000000,'011000');
+insert into cn1.TAIKHOAN_KH(SOTK, MALTK, LAISUAT, TRANGTHAI, MACN, MAKH, SoTien, MatKhau) values('898564223','LTK01',4,'Hoat dong','CN01','KH14',240000000,'011001');
+
+--- Xoa dong dữ liệu ở may 2 tu may 1 ---
+Delete from cn2.Khachhang where makh='KH03';
+
+--- Update dữ liệu ở may 2 tu may 1 ---
+update cn2.Khachhang set sdt = '77777777779' where makh='KH05';
+
+--- Mot so query ---
+select * from cn1.khachhang;
+
+select * from cn1.khachhang where ngaysinh<='2000-01-01' ALLOW FILTERING;
+
+select * from cn1.khachhang where ngaysinh>'2000-01-01' ALLOW FILTERING;
+
+select * from cn1.taikhoan_kh where trangthai = 'Chua kich hoat'
+
+
