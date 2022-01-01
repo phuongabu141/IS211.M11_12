@@ -1,0 +1,73 @@
+-- Tạo user chinhanh2
+create user chinhanh2 with password 'chinhanh2';
+login chinhanh2
+password chinhanh2
+
+-- tạo keyspace 
+
+CREATE KEYSPACE cn2
+WITH replication = {'class': 'SimpleStrategy',
+'replication_factor': '1'};
+
+-- tạo bảng
+CREATE TABLE cn1.CHINHANH
+(
+MACN VARCHAR,
+TENCN VARCHAR,
+THANHPHO VARCHAR,
+primary key (MACN)
+);
+
+
+CREATE TABLE cn1.KHACHHANG
+(
+MAKH VARCHAR,
+TENKH VARCHAR,
+NGAYSINH DATE,
+SDT VARCHAR,
+MACN VARCHAR,
+primary key (MAKH)
+);
+
+CREATE TABLE cn1.LOAITAIKHOAN
+(
+MALTK VARCHAR,
+TENLTK VARCHAR,
+MOTA VARCHAR,
+primary key (MALTK)
+);
+
+CREATE TABLE cn1.TAIKHOAN_QL
+(
+SOTK VARCHAR,
+MALTK VARCHAR,
+NGAYMO DATE,
+NGAYDONG DATE,
+MACN VARCHAR,
+MAKH VARCHAR,
+primary key (SOTK)
+);
+
+CREATE TABLE cn1.TAIKHOAN_KH
+(
+SOTK VARCHAR,
+MALTK VARCHAR,
+LAISUAT float,
+TRANGTHAI VARCHAR,
+MACN VARCHAR,
+MAKH VARCHAR,
+SoTien int,
+MatKhau Varchar,
+primary key (SOTK)
+);
+
+Create table GiaoDich
+(
+MACN VARCHAR,
+MAKH VARCHAR,
+TienGD int,
+NgayGiaoDich Date,
+LoaiGiaoDich Varchar,
+primary key (MACN,MAKH,NgayGiaoDich)
+);
+
